@@ -1,0 +1,14 @@
+{
+  "name": "js-collaborating-objects-lab-v-001",
+  "version": "1.0.0",
+  "description": "This is a JavaScript Version of the Flatiron ruby-collaborating-objects-lab-v-000.",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "Nicholas D'Amico | nickalan82@icloud.com",
+  "license": "ISC",
+  "devDependencies": {
+    "jest": "^23.5.0"
+  }
+}
