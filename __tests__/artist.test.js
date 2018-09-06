@@ -1,10 +1,5 @@
-import Artist from '../lib/Artist';
-jest.mock('../lib/Artist');
+import Artist from '../lib/artist';
 
-beforeEach(() => {
-
-  Artist.mockClear();
-});
 
 describe('Artist Class', () => {
 
@@ -13,4 +8,18 @@ describe('Artist Class', () => {
     expect(newArtist).toBeTruthy();
   });
 
-})
+  it('can be instantiated with a name for the artist', () => {
+    const newArtist = new Artist('Michael Jackson');
+    expect(newArtist.name).toBe('Michael Jackson');
+  });
+
+  describe('#setName', () => {
+
+    it("it sets the artist's name", () => {
+      const newArtist = new Artist();
+      newArtist.setName('Alan Jackson');
+      expect(newArtist.name).toBe('Alan Jackson');
+    });
+  });
+
+});
