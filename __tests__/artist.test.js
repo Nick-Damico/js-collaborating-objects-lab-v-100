@@ -20,16 +20,16 @@ describe('Artist Class', () => {
       expect(newArtist.name).toBe('Johnny Cash');
     });
   });
-});
 
-describe('#addSong', () => {
-  it("keeps track of an artist's songs", () => {
-    const newArtist = new Artist('Michael Jackson');
-    const thriller   = new Song('Thriller');
-    newArtist.addSong(thriller);
+  describe('#addSong', () => {
+    it("keeps track of an artist's songs", () => {
+      const newArtist = new Artist('Michael Jackson');
+      const thriller   = new Song('Thriller');
+      newArtist.addSong(thriller);
 
-    expect(newArtist.songs.length).toEqual(1);
-    expect(newArtist.songs).toContain(thriller);
+      expect(newArtist.songs.length).toEqual(1);
+      expect(newArtist.songs).toContain(thriller);
+    });
   });
 
  describe('.all', () => {
@@ -43,6 +43,12 @@ describe('#addSong', () => {
    });
  });
 
- describe("#save", () => {
+  describe('#save', () => {
+    it("adds the artist instance to Artist.all collection", () => {
+      const artist = new Artist('Michael Jackson');
+      artist.save();
 
+      expect(Artist.all()).toContain(artist);
+    });
+  });
 });
