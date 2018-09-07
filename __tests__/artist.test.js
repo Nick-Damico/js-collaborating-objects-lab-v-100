@@ -59,5 +59,9 @@ describe('Artist Class', () => {
 
       expect(Artist.findOrCreateByName('Kayne West')).toEqual(artist1);
     });
+
+    it("creates an instance of the Artist class if no instance is found", () => {
+      expect(Artist.findOrCreateByName('Kayne West')).toBeInstanceOf(Artist);
+    });
   });
 });
