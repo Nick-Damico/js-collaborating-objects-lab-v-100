@@ -51,4 +51,13 @@ describe('Artist Class', () => {
       expect(Artist.all()).toContain(artist);
     });
   });
+
+  describe(".findOrCreateByName", () => {
+    it("finds or creates an instance of the Artist class in the .all collection", () => {
+      const artist1 = new Artist('Kayne West');
+      artist1.save();
+
+      expect(Artist.findOrCreateByName('Kayne West')).toEqual(artist1);
+    });
+  });
 });
