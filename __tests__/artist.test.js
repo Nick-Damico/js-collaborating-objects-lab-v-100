@@ -64,4 +64,16 @@ describe('Artist Class', () => {
       expect(Artist.findOrCreateByName('Kayne West')).toBeInstanceOf(Artist);
     });
   });
+
+  describe("#printSongs", () => {
+    it("it returns a list of all the artists songs", () => {
+      const artist = new Artist('Kayne West');
+      artist.save();
+      artist.addSong('Good Life');
+      artist.addSong('Stronger');
+      artist.addSong('Forever');
+
+      expect(artist.printSongs()).toBe("Good Life\nStronger\nForever\n");
+    });
+  });
 });
