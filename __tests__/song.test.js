@@ -1,4 +1,5 @@
 import Song from '../lib/song.js';
+import Artist from '../lib/Artist.js';
 
 describe('Song Class', () => {
   it('creates an instance of the Song class', () => {
@@ -19,6 +20,16 @@ describe('Song Class', () => {
       stronger.setName('Stronger');
 
       expect(stronger.name).toEqual('Stronger');
+    });
+  });
+
+  describe("#setArtist", () => {
+    it('sets the artist object on the Song instance', () => {
+      const heartless = new Song('Heartless');
+      const kayne = new Artist('Kayne').save();
+
+      heartless.setArtist(kayne);
+      expect(heartless.artist).toEqual(kayne);
     });
   });
 });
