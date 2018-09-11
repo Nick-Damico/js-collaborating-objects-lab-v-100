@@ -12,4 +12,13 @@ describe('Song Class', () => {
 
     expect(thriller.name).toBe('thriller');
   });
+
+  describe('#setName', () => {
+    it('sets the name of the Song instance', () => {
+      const stronger = new Song();
+      stronger.setName('Stronger');
+
+      expect(stronger.name).toEqual('Stronger');
+    });
+  });
 });
