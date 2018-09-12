@@ -32,4 +32,16 @@ describe('Song Class', () => {
       expect(heartless.artist).toEqual(kayne);
     });
   });
+
+  describe(".newByFileName", () => {
+    const filePath = "Kayne West - Homecoming - rap.mp3"
+    const newSong = Song.newByFileName(filePath);
+    it('creates a new instance of a song from the file that\'s passed in', () => {
+      expect(newSong).toEqual('Homecoming');
+    });
+
+    it('associates an instance of the Artist to newly created song', () => {
+      expect(newSong.artist()).toEqual('Kayne West');
+    });
+  });
 });
