@@ -34,14 +34,17 @@ describe('Song Class', () => {
   });
 
   describe(".newByFileName", () => {
-    const filePath = "Kayne West - Homecoming - rap.mp3"
-    const newSong = Song.newByFileName(filePath);
+
     it('creates a new instance of a song from the file that\'s passed in', () => {
-      expect(newSong).toEqual('Homecoming');
+      const filePath = "Kayne West - Homecoming - rap.mp3"
+      const newSong = Song.newByFileName(filePath);
+      expect(newSong.name).toEqual('Homecoming');
     });
 
     it('associates an instance of the Artist to newly created song', () => {
-      expect(newSong.artist()).toEqual('Kayne West');
+      const filePath = "Kayne West - Homecoming - rap.mp3"
+      const newSong = Song.newByFileName(filePath);
+      expect(newSong.artist.name).toEqual('Kayne West');
     });
   });
 });
